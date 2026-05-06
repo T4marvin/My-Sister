@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@800&display=swap');
+
+@theme {
+  --color-navy: #0a1628;
+  --color-cyan: #00d4ff;
+  --color-muted: #8899aa;
+  
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui;
+  --font-display: "Syne", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-navy text-white font-sans selection:bg-cyan selection:text-navy;
+  }
+}
+
+.glow-bg {
+  background: radial-gradient(circle at center, rgba(0, 212, 255, 0.15) 0%, transparent 70%);
+}
+
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-navy;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted/20 border-2 border-navy rounded-full hover:bg-cyan/50 transition-colors;
+}
